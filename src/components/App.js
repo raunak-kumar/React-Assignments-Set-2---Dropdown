@@ -159,7 +159,7 @@ function App() {
 		<div id="main">
 			<label>
 				States :
-          <select onChange={e => { handleState(e) }}>
+          <select onChange={e => { handleState(e) }} id="state">
 					{states.map((item, index) => (<option value={index}>{item.name}</option>))}
 				</select>
 			</label>
@@ -167,7 +167,7 @@ function App() {
 			<br></br>
 			<label>
 				Cities :
-          <select onChange={e => { handleCity(e) }}>
+          <select onChange={e => { handleCity(e) }} id="city">
 					{states[stateId].city.map((item, index) => (<option value={index}>{item.name}</option>))}
 				</select>
 			</label>
@@ -175,7 +175,7 @@ function App() {
 			<br></br>
 			<label>
 				Towns :
-          <select onChange={e => { handleLandmark(e) }}>
+          <select onChange={e => { handleLandmark(e) }} id="landmark">
 					{states[stateId].city[cityId].landmarks.map((item, index) => (<option value={index}>{item.name}</option>))}
 				</select>
 			</label>
