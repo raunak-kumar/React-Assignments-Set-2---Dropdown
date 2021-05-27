@@ -142,16 +142,16 @@ function App() {
 	const [stateId, setStateId] = useState(0);
 	const [cityId, setCityId] = useState(0);
 	const [landmarkId, setLandmarkId] = useState(0);
-	const handleState =(e) => {
+	const handleState = (e) => {
 		e.preventDefault();
 		setStateId(e.target.value)
 	}
-	const handleCity=(e) =>{
+	const handleCity = (e) => {
 		e.preventDefault();
 		setCityId(e.target.value)
-		
+
 	}
-	const handleLandmark=(e) =>{
+	const handleLandmark = (e) => {
 		e.preventDefault();
 		setLandmarkId(e.target.value)
 	}
@@ -159,7 +159,7 @@ function App() {
 		<div id="main">
 			<label>
 				States :
-          <select onChange={e=>{handleState(e)}}>
+          <select onChange={e => { handleState(e) }}>
 					{states.map((item, index) => (<option value={index}>{item.name}</option>))}
 				</select>
 			</label>
@@ -167,26 +167,30 @@ function App() {
 			<br></br>
 			<label>
 				Cities :
-          <select onChange={e=>{handleCity(e)}}>
+          <select onChange={e => { handleCity(e) }}>
 					{states[stateId].city.map((item, index) => (<option value={index}>{item.name}</option>))}
 				</select>
 			</label>
+			<br></br>
+			<br></br>
 			<label>
-				<br></br>
-				<br></br>
-          Towns :
-          <select onChange={e=>{handleLandmark(e)}}>
+				Towns :
+          <select onChange={e => { handleLandmark(e) }}>
 					{states[stateId].city[cityId].landmarks.map((item, index) => (<option value={index}>{item.name}</option>))}
 				</select>
 			</label>
+			<br></br>
+			<br></br>
 			<div id="state-name">
 				<div id="state-title">{states[stateId].name}</div>
 				<div id="state-description">{states[stateId].description}</div>
 			</div>
+			<br></br>
 			<div id="city-name">
 				<div id="city-title">{states[stateId].city[cityId].name}</div>
 				<div id="city-description">{states[stateId].city[cityId].description}</div>
 			</div>
+			<br></br>
 			<div id="landmark-name">
 				<div id="landmark-title">{states[stateId].city[cityId].landmarks[landmarkId].name}</div>
 				<div id="landmark-description">{states[stateId].city[cityId].landmarks[landmarkId].description}</div>
